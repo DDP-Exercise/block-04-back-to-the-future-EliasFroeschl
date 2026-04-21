@@ -18,7 +18,12 @@ body{
     display: flex;
 }
 
-
+.right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .left{
     width: 50%;
     display: flex;
@@ -26,68 +31,66 @@ body{
     align-items: center;
 }
 
-.right{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-#digital-clock{
-    width: 260px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #7CFF00;
-    font-size: 42px;
-    font-family: Arial, sans-serif;
+#digital-clock {
+    width: 340px;
+    padding: 25px;
+    background: linear-gradient(135deg, #111, #1c1c1c);
+    color: #00e5ff;
+    font-size: 56px;
+    font-family: "Courier New", monospace;
     text-align: center;
-    border: 2px solid #7CFF00;
-    border-radius: 8px;
+    border: 3px solid #00e5ff;
+    border-radius: 12px;
+    letter-spacing: 2px;
 }
 
-#analogue-clock{
-    width: 280px;
-    height: 280px;
-    border: 6px solid white;
+#analogue-clock {
+    width: 380px;
+    height: 380px;
+    border: 8px solid #222;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
+    background: radial-gradient(circle, #2a2a2a 40%, #111 100%);
     position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
 }
 
-.pointer{
+.pointer {
     position: absolute;
     left: 50%;
     bottom: 50%;
-    transform: translateX(-50%) rotate(0deg);
     transform-origin: bottom center;
+    transform: translateX(-50%) rotate(0deg);
 }
 
-.hour-pointer{
-    width: 8px;
-    height: 70px;
-    background-color: white;
+.hour-pointer {
+    width: 10px;
+    height: 95px;
+    background: #ffffff;
+    border-radius: 4px;
 }
 
-.minute-pointer{
-    width: 5px;
-    height: 100px;
-    background-color: white;
+.minute-pointer {
+    width: 6px;
+    height: 140px;
+    background: #cccccc;
+    border-radius: 3px;
 }
 
-.second-pointer{
-    width: 2px;
-    height: 120px;
-    background-color: red;
+.second-pointer {
+    width: 3px;
+    height: 170px;
+    background: #ff1744;
 }
 
-.center-dot{
-    width: 12px;
-    height: 12px;
+.center-dot {
+    width: 16px;
+    height: 16px;
+    background: #00e5ff;
     border-radius: 50%;
-    background-color: white;
     position: absolute;
-    left: 50%;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px #00e5ff;
 }
+
