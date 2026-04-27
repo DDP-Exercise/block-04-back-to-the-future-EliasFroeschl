@@ -7,7 +7,7 @@ export let digitalView = {
         this.output = document.getElementById("digital-clock");
     },
 
-    update: function (hours, minutes, seconds) { // Damit die Uhrdarstellung schöner aussieht
+    update: function (hours, minutes, seconds) {
         let hourText = "";
         let minuteText = "";
         let secondText = "";

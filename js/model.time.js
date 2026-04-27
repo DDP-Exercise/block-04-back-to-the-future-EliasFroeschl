@@ -4,7 +4,7 @@ export let timeModel = {
     currentTime: null,
 
     updateTime: function() {
-        this.currentTime = new Date(); //new Date --> aktuelle zeit vom Browser
+        this.currentTime = new Date(); //new Date --> current Time
     },
     getHours: function() {
         return this.currentTime.getHours();
