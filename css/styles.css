@@ -1,5 +1,7 @@
 body{
-    background-image: url('../img/BTTFII.webp');
+    background-image:
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url('../img/BTTFII.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -8,3 +10,87 @@ body{
     padding: 0;
     margin: 0;
 }
+
+/*wrapper seperates the screen */
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#digital-clock {
+    width: 340px;
+    padding: 25px;
+    background: linear-gradient(135deg, #111, #1c1c1c);
+    color: #00e5ff;
+    font-size: 56px;
+    font-family: "Courier New", monospace;
+    text-align: center;
+    border: 3px solid #00e5ff;
+    border-radius: 12px;
+    letter-spacing: 2px;
+}
+
+#analogue-clock {
+    width: 380px;
+    height: 380px;
+    border: 8px solid #222;
+    border-radius: 50%;
+    background: radial-gradient(circle, #2a2a2a 40%, #111 100%);
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+.pointer {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(0deg);
+}
+
+.hour-pointer {
+    width: 10px;
+    height: 95px;
+    background: #ffffff;
+    border-radius: 4px;
+}
+
+.minute-pointer {
+    width: 6px;
+    height: 140px;
+    background: #cccccc;
+    border-radius: 3px;
+}
+
+.second-pointer {
+    width: 3px;
+    height: 170px;
+    background: #ff1744;
+}
+
+.center-dot {
+    width: 16px;
+    height: 16px;
+    background: #00e5ff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px #00e5ff;
+}
+

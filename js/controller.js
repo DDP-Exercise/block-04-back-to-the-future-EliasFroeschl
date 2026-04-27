@@ -35,3 +35,32 @@
 
 // HINT:
 // setInterval(functionName, 1000); will call functionName() every 1000 miliseconds.
+
+import {timeModel} from "./model.time.js";
+import {digitalView} from "./view.digital.js";
+import {analogueView} from "./view.analogue.js";
+
+
+let timeController = {
+    updateClocks: function() {
+        let currentHours = 0;
+        let currentMinutes = 0;
+        let currentSeconds = 0;
+
+
+        timeModel.updateTime();
+        currentHours = timeModel.getHours();
+        currentMinutes = timeModel.getMinutes();
+        currentSeconds = timeModel.getSeconds();
+
+        digitalView.update(currentHours, currentMinutes, currentSeconds, currentHours);
+        analogueView.update(currentHours, currentMinutes, currentSeconds, currentHours);
+    },
+
+    startClock: function() {
+        timeController.updateClocks();
+        setInterval(timeController.updateClocks, 1000);
+    }
+};
+
+timeController.startClock();

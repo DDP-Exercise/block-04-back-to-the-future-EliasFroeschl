@@ -5,7 +5,29 @@
     <title>Back to the Future</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
+<div class="wrapper">
+
+    <div class="left">
+        <div id="digital-clock"></div>
+    </div>
+
+    <div class="right">
+        <div id="analogue-clock">
+            <div id="hour-pointer" class="pointer hour-pointer"></div>
+            <div id="minute-pointer" class="pointer minute-pointer"></div>
+            <div id="second-pointer" class="pointer second-pointer"></div>
+            <div class="center-dot"></div>
+        </div>
+    </div>
+
+</div>
+
+<script type="module" src="./js/model.time.js"></script>
+<script type="module" src="./js/view.digital.js"></script>
+<script type="module" src="./js/view.analogue.js"></script>
+<script type="module" src="./js/controller.js"></script>
 
 </body>
 </html>
