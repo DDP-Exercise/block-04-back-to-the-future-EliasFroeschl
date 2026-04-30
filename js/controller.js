@@ -42,6 +42,35 @@ import {analogueView} from "./view.analogue.js";
 
 
 let timeController = {
+
+    saveButton: null,
+    init: function() {
+        this.saveButton = document.getElementById("save-time-button");
+        this.saveButton.addEventListener("click", this.saveTime);
+    },
+
+    saveTime: function() {
+        timeModel.updateTime();
+        let hours = timeModel.getHours();
+        let minutes = timeModel.getMinutes();
+        let seconds = timeModel.getSeconds();
+
+        if (hours < 10) {
+            hours = "0" + hours;
+        }
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+        let savedTime = hours + ":" + minutes + ":" + seconds;
+
+        localStorage.setItem("clicked Time", savedTime);
+        console.log(savedTime);
+    },
+
+
     updateClocks: function() {
         let currentHours = 0;
         let currentMinutes = 0;
@@ -63,4 +92,5 @@ let timeController = {
     }
 };
 
+timeController.init();
 timeController.startClock();

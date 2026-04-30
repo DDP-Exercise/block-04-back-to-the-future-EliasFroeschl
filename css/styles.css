@@ -24,10 +24,17 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 .left{
     width: 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.clock-box {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -42,6 +49,23 @@ body{
     border: 3px solid #00e5ff;
     border-radius: 12px;
     letter-spacing: 2px;
+}
+
+#save-time-button {
+    margin-top: 20px;
+    width: 200px;
+    padding: 12px;
+    background-color: #00e5ff;
+    color: #111;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-family: "Courier New", monospace;
+    cursor: pointer;
+}
+
+#save-time-button:hover {
+    background-color: #8ff4ff;
 }
 
 #analogue-clock {
@@ -93,4 +117,3 @@ body{
     transform: translate(-50%, -50%);
     box-shadow: 0 0 10px #00e5ff;
 }
-
