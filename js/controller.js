@@ -35,3 +35,62 @@
 
 // HINT:
 // setInterval(functionName, 1000); will call functionName() every 1000 miliseconds.
+
+import {timeModel} from "./model.time.js";
+import {digitalView} from "./view.digital.js";
+import {analogueView} from "./view.analogue.js";
+
+
+let timeController = {
+
+    saveButton: null,
+    init: function() {
+        this.saveButton = document.getElementById("save-time-button");
+        this.saveButton.addEventListener("click", this.saveTime);
+    },
+
+    saveTime: function() {
+        timeModel.updateTime();
+        let hours = timeModel.getHours();
+        let minutes = timeModel.getMinutes();
+        let seconds = timeModel.getSeconds();
+
+        if (hours < 10) {
+            hours = "0" + hours;
+        }
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+        let savedTime = hours + ":" + minutes + ":" + seconds;
+
+        localStorage.setItem("clicked Time", savedTime);
+        console.log(savedTime);
+    },
+
+
+    updateClocks: function() {
+        let currentHours = 0;
+        let currentMinutes = 0;
+        let currentSeconds = 0;
+
+
+        timeModel.updateTime();
+        currentHours = timeModel.getHours();
+        currentMinutes = timeModel.getMinutes();
+        currentSeconds = timeModel.getSeconds();
+
+        digitalView.update(currentHours, currentMinutes, currentSeconds, currentHours);
+        analogueView.update(currentHours, currentMinutes, currentSeconds, currentHours);
+    },
+
+    startClock: function() {
+        timeController.updateClocks();
+        setInterval(timeController.updateClocks, 1000);
+    }
+};
+
+timeController.init();
+timeController.startClock();
